@@ -3,82 +3,155 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Radar OSINT - Alertas Económicas</title>
 
-<meta name="description" content="Seguimiento OSINT de IPC, energía y alertas económicas en tiempo real">
+<title>Radar OSINT | Inteligencia Económica Automatizada</title>
+
+<meta name="description" content="Sistema OSINT automatizado para monitorización de IPC, energía y alertas macroeconómicas en tiempo real.">
+<meta name="keywords" content="OSINT, IPC, energía, inteligencia económica, alertas, análisis">
 
 <style>
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
     background: #0f172a;
     color: #e2e8f0;
+}
+
+header {
+    background: #020617;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
     margin: 0;
+    font-size: 36px;
 }
 
-.header {
+header p {
+    color: #94a3b8;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
     background: #1e293b;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    padding: 15px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #334155;
+}
+
+.section {
+    display: none;
     padding: 20px;
 }
 
-.container {
-    padding: 20px;
+.active {
+    display: block;
 }
 
 .card {
     background: #1e293b;
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 15px;
     border-radius: 8px;
 }
 
-.high { border-left: 5px solid #ef4444; }
-.medium { border-left: 5px solid #f59e0b; }
-.low { border-left: 5px solid #22c55e; }
-
-.big {
-    font-size: 28px;
-    font-weight: bold;
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    color: #94a3b8;
 }
 </style>
 
+<script>
+function showTab(tab) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
+}
+</script>
+
 </head>
+
 <body>
 
-<div class="header">
+<header>
 <h1>Radar OSINT</h1>
-<p>Actualizado: 2026-03-29 14:43:40</p>
-</div>
+<p>Plataforma de inteligencia económica automatizada basada en Python, Linux y OSINT</p>
+<p>Actualizado: 2026-03-29 14:49:29</p>
+</header>
 
-<div class="container">
+<nav>
+<button onclick="showTab('dashboard')">Dashboard</button>
+<button onclick="showTab('metodologia')">Metodología</button>
+<button onclick="showTab('estructura')">Estructura</button>
+<button onclick="showTab('modelo')">Modelo OSINT</button>
+</nav>
 
-<div class="card low">
-<h2>🚨 Nivel de alerta: LOW</h2>
-<p class="big">
-Situación estable
-</p>
+<div id="dashboard" class="section active">
+
+<div class="card">
+<h2>🚨 Nivel de alerta: HIGH</h2>
+<p>Escenario de presión económica elevada</p>
 </div>
 
 <div class="card">
 <h3>📊 IPC</h3>
-<p class="big">3.27</p>
-<p>Inflación controlada</p>
+<p>3.63</p>
 </div>
 
 <div class="card">
 <h3>⚡ Energía</h3>
-<p class="big">130.98</p>
-<p>Precio estable</p>
+<p>147.2</p>
 </div>
 
-<div class="card">
-<h3>🧠 Interpretación</h3>
+</div>
+
+<div id="metodologia" class="section">
+<h2>Metodología</h2>
 <p>
-El sistema detecta un entorno estable o controlado.
-La combinación de inflación y energía permite anticipar escenarios de riesgo.
+El sistema se basa en la ingesta automatizada de datos económicos,
+procesados mediante scripts Python ejecutados en ciclos programados.
+Los datos se almacenan en formato JSON y se transforman en indicadores clave.
 </p>
 </div>
 
+<div id="estructura" class="section">
+<h2>Estructura del sistema</h2>
+<p>
+Pipeline modular:
+<ul>
+<li>Captura de datos (scripts Python)</li>
+<li>Procesamiento (indicadores)</li>
+<li>Generación HTML estático</li>
+<li>Publicación automática en GitHub Pages</li>
+</ul>
+</p>
 </div>
+
+<div id="modelo" class="section">
+<h2>Modelo OSINT</h2>
+<p>
+El Radar OSINT se basa en correlación de variables económicas
+para detectar escenarios de riesgo.
+La combinación de IPC y energía permite anticipar tensiones macroeconómicas.
+</p>
+</div>
+
+<footer>
+<p>© 2026 M. Castillo</p>
+<p>Contacto: <a href="mailto:mybloggingnotes@gmail.com">mybloggingnotes@gmail.com</a></p>
+</footer>
 
 </body>
 </html>
