@@ -1,85 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 
-<title>Radar OSINT | Inteligencia Económica Automatizada</title>
-
-<meta name="description" content="Sistema OSINT automatizado para monitorización de IPC, energía y alertas macroeconómicas en tiempo real.">
-<meta name="keywords" content="OSINT, IPC, energía, inteligencia económica, alertas, análisis">
+<title>Radar OSINT</title>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: Arial;
     background: #0f172a;
     color: #e2e8f0;
+    margin: 0;
 }
 
 header {
     background: #020617;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-header p {
-    color: #94a3b8;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background: #1e293b;
-}
-
-nav button {
-    background: none;
-    border: none;
-    color: #e2e8f0;
-    padding: 15px;
-    cursor: pointer;
-}
-
-nav button:hover {
-    background: #334155;
-}
-
-.section {
-    display: none;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
 }
 
-.active {
-    display: block;
+.kpi {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.kpi h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
     background: #1e293b;
     padding: 20px;
-    margin-bottom: 15px;
     border-radius: 8px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
-    color: #94a3b8;
+img {
+    width: 100%;
 }
 </style>
-
-<script>
-function showTab(tab) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(tab).classList.add('active');
-}
-</script>
 
 </head>
 
@@ -87,71 +62,65 @@ function showTab(tab) {
 
 <header>
 <h1>Radar OSINT</h1>
-<p>Plataforma de inteligencia económica automatizada basada en Python, Linux y OSINT</p>
-<p>Actualizado: 2026-03-29 14:49:29</p>
+<p>Actualizado: 2026-03-29 14:54:46</p>
 </header>
 
-<nav>
-<button onclick="showTab('dashboard')">Dashboard</button>
-<button onclick="showTab('metodologia')">Metodología</button>
-<button onclick="showTab('estructura')">Estructura</button>
-<button onclick="showTab('modelo')">Modelo OSINT</button>
-</nav>
+<!-- KPIs -->
+<div class="grid">
 
-<div id="dashboard" class="section active">
+<div class="kpi">
+<h3>IPC</h3>
+<h2>3.64</h2>
+</div>
+
+<div class="kpi">
+<h3>Energía</h3>
+<h2>137.85</h2>
+</div>
+
+<div class="kpi">
+<h3>Alerta</h3>
+<h2>MEDIUM</h2>
+</div>
+
+</div>
+
+<!-- CONTENIDO -->
+<div class="main">
+
+<div>
 
 <div class="card">
-<h2>🚨 Nivel de alerta: HIGH</h2>
-<p>Escenario de presión económica elevada</p>
+<h3>📊 Evolución IPC</h3>
+<img src="ipc.png">
 </div>
 
 <div class="card">
-<h3>📊 IPC</h3>
-<p>3.63</p>
+<h3>⚡ Evolución Energía</h3>
+<img src="energia.png">
 </div>
+
+</div>
+
+<div>
 
 <div class="card">
-<h3>⚡ Energía</h3>
-<p>147.2</p>
-</div>
-
-</div>
-
-<div id="metodologia" class="section">
-<h2>Metodología</h2>
+<h3>🧠 Interpretación</h3>
 <p>
-El sistema se basa en la ingesta automatizada de datos económicos,
-procesados mediante scripts Python ejecutados en ciclos programados.
-Los datos se almacenan en formato JSON y se transforman en indicadores clave.
+Inflación moderada con presión energética elevada.
 </p>
 </div>
 
-<div id="estructura" class="section">
-<h2>Estructura del sistema</h2>
+<div class="card">
+<h3>🚨 Evaluación</h3>
 <p>
-Pipeline modular:
-<ul>
-<li>Captura de datos (scripts Python)</li>
-<li>Procesamiento (indicadores)</li>
-<li>Generación HTML estático</li>
-<li>Publicación automática en GitHub Pages</li>
-</ul>
+Sin tensiones críticas.
 </p>
 </div>
 
-<div id="modelo" class="section">
-<h2>Modelo OSINT</h2>
-<p>
-El Radar OSINT se basa en correlación de variables económicas
-para detectar escenarios de riesgo.
-La combinación de IPC y energía permite anticipar tensiones macroeconómicas.
-</p>
 </div>
 
-<footer>
-<p>© 2026 M. Castillo</p>
-<p>Contacto: <a href="mailto:mybloggingnotes@gmail.com">mybloggingnotes@gmail.com</a></p>
-</footer>
+</div>
 
 </body>
 </html>
