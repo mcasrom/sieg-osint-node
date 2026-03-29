@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-29T08:01:32.825411",
-  "ipc": 3.04,
-  "energia": 59.26,
-  "alert_level": "MEDIUM",
-  "ipc_trend": "NORMAL"
+  "timestamp": "2026-03-29T08:12:26.842260",
+  "ipc": 4.06,
+  "energia": 126.84,
+  "alert_level": "LOW",
+  "ipc_trend": "ALTO"
 }
