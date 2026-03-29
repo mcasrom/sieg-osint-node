@@ -1,113 +1,89 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-<meta charset="UTF-8">
-
-<title>Radar OSINT | Narrativas y Señales</title>
-
+<meta charset='UTF-8'>
+<title>Radar OSINT - Datos Reales</title>
 <style>
-body {
-    font-family: Arial;
-    background: #0f172a;
-    color: #e2e8f0;
-    margin: 0;
-}
-
-header {
-    background: #020617;
-    padding: 20px;
-    text-align: center;
-}
-
-.kpis {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.kpi {
-    background: #1e293b;
-    padding: 10px;
-    border-radius: 6px;
-    width: 30%;
-    text-align: center;
-}
-
-.section {
-    padding: 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.ncard {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
-    color: #94a3b8;
-}
+body { font-family: Arial; background:#0f172a; color:#e2e8f0; margin:0; }
+header { padding:20px; text-align:center; background:#020617; }
+nav { display:flex; justify-content:center; background:#1e293b; }
+nav button { background:none; border:none; color:white; padding:10px; cursor:pointer; }
+.section { display:none; padding:20px; }
+.active { display:block; }
+.kpis { display:flex; gap:10px; }
+.kpi { background:#1e293b; padding:10px; border-radius:5px; flex:1; text-align:center; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px; }
+.card { background:#1e293b; padding:10px; border-radius:5px; }
+footer { text-align:center; padding:15px; background:#020617; color:#94a3b8; }
 </style>
-
+<script>
+function showTab(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
 </head>
-
 <body>
-
 <header>
 <h1>Radar OSINT</h1>
-<p>Monitor de narrativas geopolíticas y económicas</p>
-<p>Actualizado: 2026-03-29 15:10:15</p>
+<p>Monitor de narrativas y KPIs económicos</p>
+<p>Actualizado: 2026-03-29 15:20:49</p>
 </header>
+<nav>
+<button onclick="showTab('dash')">Dashboard</button>
+<button onclick="showTab('narr')">Narrativas</button>
+<button onclick="showTab('metodo')">Metodología</button>
+<button onclick="showTab('estructura')">Estructura</button>
+<button onclick="showTab('modelo')">Modelo OSINT</button>
+</nav>
 
-<div class="kpis">
-<div class="kpi"><b>IPC</b><br>3.16</div>
-<div class="kpi"><b>Energía</b><br>136.16</div>
-<div class="kpi"><b>Alerta</b><br>LOW</div>
+<div id='dash' class='section active'>
+<div class='kpis'>
+<div class='kpi'><b>IPC</b><br>3.16</div>
+<div class='kpi'><b>Energía</b><br>104.79</div>
+<div class='kpi'><b>Alerta</b><br>LOW</div>
+</div>
 </div>
 
-<div class="section">
-<h2>Narrativas detectadas</h2>
-<div class="grid">
-
-    <div class="ncard">
-        <h3>OTAN</h3>
-        <p><b>Sentimiento:</b> NEGATIVE</p>
-        <p><b>Tendencia:</b> UP</p>
-        <p><b>Keywords:</b> guerra, expansión, conflicto</p>
-        <p><b>Actores:</b> medios alternativos, cuentas pro-rusia</p>
+<div id='narr' class='section'>
+<h2>Narrativas</h2>
+<div class='grid'>
+    <div class="card">
+        <h3>Energía</h3>
+        <p>Sentimiento: ALTO</p>
+        <p>Tendencia: UP</p>
+        <p>Keywords: gas, electricidad, costes</p>
+        <p>Actores: informes oficiales, medios nacionales</p>
     </div>
     
-    <div class="ncard">
-        <h3>Rusia</h3>
-        <p><b>Sentimiento:</b> POSITIVE</p>
-        <p><b>Tendencia:</b> UP</p>
-        <p><b>Keywords:</b> soberanía, multipolaridad</p>
-        <p><b>Actores:</b> canales Telegram, analistas geopolíticos</p>
+    <div class="card">
+        <h3>IPC</h3>
+        <p>Sentimiento: MEDIO</p>
+        <p>Tendencia: STABLE</p>
+        <p>Keywords: inflación, precios, mercado</p>
+        <p>Actores: INE, Bancos</p>
     </div>
-    
-    <div class="ncard">
-        <h3>Israel</h3>
-        <p><b>Sentimiento:</b> NEGATIVE</p>
-        <p><b>Tendencia:</b> HIGH</p>
-        <p><b>Keywords:</b> conflicto, Gaza, ataques</p>
-        <p><b>Actores:</b> prensa internacional</p>
     </div>
-    
 </div>
+
+<div id='metodo' class='section'>
+<h2>Metodología</h2>
+<p>Datos obtenidos de fuentes oficiales y medios nacionales, procesados con Python para generar indicadores y narrativas.</p>
+</div>
+
+<div id='estructura' class='section'>
+<h2>Estructura</h2>
+<p>Scripts, JSON de salida, pipeline cron y HTML estático publicado en GitHub Pages.</p>
+</div>
+
+<div id='modelo' class='section'>
+<h2>Modelo OSINT</h2>
+<p>Análisis correlacional entre indicadores y narrativas para detectar tensiones y tendencias.</p>
 </div>
 
 <footer>
-<p>© 2026 M. Castillo</p>
-<p>Contacto: mybloggingnotes@gmail.com</p>
+<p>© 2026 M. Castillo | Contacto: mybloggingnotes@gmail.com</p>
 </footer>
-
 </body>
 </html>
