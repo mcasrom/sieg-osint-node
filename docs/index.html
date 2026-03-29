@@ -1,19 +1,84 @@
 
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>Radar OSINT</title>
-<meta name="description" content="Radar OSINT con datos reales IPC y Energía">
+<meta charset="UTF-8">
+<title>Radar OSINT - Alertas Económicas</title>
+
+<meta name="description" content="Seguimiento OSINT de IPC, energía y alertas económicas en tiempo real">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+.header {
+    background: #1e293b;
+    padding: 20px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.high { border-left: 5px solid #ef4444; }
+.medium { border-left: 5px solid #f59e0b; }
+.low { border-left: 5px solid #22c55e; }
+
+.big {
+    font-size: 28px;
+    font-weight: bold;
+}
+</style>
+
 </head>
 <body>
-<h1>Radar OSINT</h1>
-<p>Actualizado: 2026-03-29 14:40:46</p>
 
-<h2>Indicadores</h2>
-<ul>
-<li>IPC: 4.77</li>
-<li>Energía: 148.87</li>
-<li>Alerta: HIGH</li>
-</ul>
+<div class="header">
+<h1>Radar OSINT</h1>
+<p>Actualizado: 2026-03-29 14:43:40</p>
+</div>
+
+<div class="container">
+
+<div class="card low">
+<h2>🚨 Nivel de alerta: LOW</h2>
+<p class="big">
+Situación estable
+</p>
+</div>
+
+<div class="card">
+<h3>📊 IPC</h3>
+<p class="big">3.27</p>
+<p>Inflación controlada</p>
+</div>
+
+<div class="card">
+<h3>⚡ Energía</h3>
+<p class="big">130.98</p>
+<p>Precio estable</p>
+</div>
+
+<div class="card">
+<h3>🧠 Interpretación</h3>
+<p>
+El sistema detecta un entorno estable o controlado.
+La combinación de inflación y energía permite anticipar escenarios de riesgo.
+</p>
+</div>
+
+</div>
 
 </body>
 </html>
